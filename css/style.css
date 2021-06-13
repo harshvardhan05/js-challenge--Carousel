@@ -13,12 +13,18 @@ img{
     max-width: 600px;
     position: relative;
 }
-.carousel-item{
+.carousel-item,
+.carousel-item-hidden{
     display: none;
 }
 .carousel-item-visible{
     display: block;
+    animation: fadeVisibility 1s;
 }
+
+
+
+
 .carousel-actions{
     display: flex;
     width: 100%;
@@ -49,3 +55,7 @@ button:focus{
     background: red;
 }
 
+@keyframes fadeVisibility{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
