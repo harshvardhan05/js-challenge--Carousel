@@ -1,38 +1,84 @@
 const btnPrev = document.querySelector("#carousel-button-previous")
 const btnNext = document.querySelector("#carousel-button-next")
 const slides = document.querySelectorAll(".carousel-item")
+const dots = document.querySelectorAll(".carousel-dots")
+
+console.log(dots)
 
 let slidePosition = 0
 let totalSlides = slides.length
 
+dots[0].addEventListener("click", function() {
+    hideAllSlidesAndDots()
+    slides[0].classList.add("carousel-item-visible");
+    dots[0].classList.add("carousel-dots-active");
+})
+dots[1].addEventListener("click", function() {
+    hideAllSlidesAndDots()
+    slides[1].classList.add("carousel-item-visible");
+    dots[1].classList.add("carousel-dots-active");
+})
+dots[2].addEventListener("click", function() {
+    hideAllSlidesAndDots()
+    slides[2].classList.add("carousel-item-visible");
+    dots[2].classList.add("carousel-dots-active");
+})
+dots[3].addEventListener("click", function() {
+    hideAllSlidesAndDots()
+    slides[3].classList.add("carousel-item-visible");
+    dots[3].classList.add("carousel-dots-active");
+})
+dots[4].addEventListener("click", function() {
+    hideAllSlidesAndDots()
+    slides[4].classList.add("carousel-item-visible");
+    dots[4].classList.add("carousel-dots-active");
+})
+dots[5].addEventListener("click", function() {
+    hideAllSlidesAndDots()
+    slides[5].classList.add("carousel-item-visible");
+    dots[5].classList.add("carousel-dots-active");
+})
+dots[6].addEventListener("click", function() {
+    hideAllSlidesAndDots()
+    slides[6].classList.add("carousel-item-visible");
+    dots[6].classList.add("carousel-dots-active");
+})
+
+
 btnNext.addEventListener("click", nextSlide)
 btnPrev.addEventListener("click", prevSlide)
 
-function hideAllSlides(){
+function hideAllSlidesAndDots(){
     for(let slide of slides){
         slide.classList.remove("carousel-item-visible")
         slide.classList.add("carousel-item-hidden")
     }
+    for(let dot of dots){
+        dot.classList.remove("carousel-dots-active")
+        dot.classList.add("carousel-dots")
+    }
 }
 
 function nextSlide(){
-    hideAllSlides()
+    hideAllSlidesAndDots()
     if(slidePosition == totalSlides-1){
         slidePosition = 0
     }else{
         slidePosition++
     }
     slides[slidePosition].classList.add("carousel-item-visible");
+    dots[slidePosition].classList.add("carousel-dots-active");
 }
 
 function prevSlide(){
-    hideAllSlides()
+    hideAllSlidesAndDots()
     if(slidePosition == 0){
         slidePosition = slides.length-1;
     }else{
         slidePosition--;
     }
     slides[slidePosition].classList.add("carousel-item-visible");
+    dots[slidePosition].classList.add("carousel-dots-active");
 }
 
 

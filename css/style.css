@@ -7,11 +7,13 @@ img{
     width: 100%;
     max-width: 600px;
     height: auto;
+    border: 5px solid #0ef19a;
 }
 
 .carousel{
     max-width: 600px;
     position: relative;
+    margin: 0 auto;
 }
 .carousel-item,
 .carousel-item-hidden{
@@ -19,7 +21,7 @@ img{
 }
 .carousel-item-visible{
     display: block;
-    animation: fadeVisibility 1s;
+    animation: fadeVisibility 0.5s;
 }
 
 
@@ -50,10 +52,30 @@ button{
 #carousel-button-next{
     margin-right: 10px;
 }
-button:hover,
-button:focus{
+button:active:hover,
+button:active:focus{
     background: red;
 }
+
+.carousel .dots{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    
+    transform: translateX(0%);
+}
+.carousel .dots .carousel-dots{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: grey;
+    margin-right: 10px;
+    cursor: pointer; 
+}
+.carousel .dots .carousel-dots-active{
+    background-color: red;
+}
+
 
 @keyframes fadeVisibility{
     0%{opacity: 0;}
