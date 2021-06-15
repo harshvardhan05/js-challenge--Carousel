@@ -57,14 +57,14 @@ button:active:focus{
     background: red;
 }
 
-.carousel .dots{
+.carousel #dots{
     display: flex;
     justify-content: center;
     position: relative;
     
     transform: translateX(0%);
 }
-.carousel .dots .carousel-dots{
+.carousel #dots .carousel-dots{
     width: 10px;
     height: 10px;
     border-radius: 50%;
@@ -72,7 +72,7 @@ button:active:focus{
     margin-right: 10px;
     cursor: pointer; 
 }
-.carousel .dots .carousel-dots-active{
+.carousel #dots .carousel-dots-active{
     background-color: red;
 }
 

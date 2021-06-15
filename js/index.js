@@ -3,47 +3,56 @@ const btnNext = document.querySelector("#carousel-button-next")
 const slides = document.querySelectorAll(".carousel-item")
 const dots = document.querySelectorAll(".carousel-dots")
 
-console.log(dots)
+let container = [...dots]
+container.forEach((item, index) =>{
+    item.addEventListener("click", function(){
+        hideAllSlidesAndDots()
+        slides[index].classList.add("carousel-item-visible");
+        dots[index].classList.add("carousel-dots-active");   
+    })
+})
+
+
+//<-----------------other way (DRY)---------------->
+
+// dots[0].addEventListener("click", function() {
+//     hideAllSlidesAndDots()
+//     slides[0].classList.add("carousel-item-visible");
+//     dots[0].classList.add("carousel-dots-active");
+// })
+// dots[1].addEventListener("click", function() {
+//     hideAllSlidesAndDots()
+//     slides[1].classList.add("carousel-item-visible");
+//     dots[1].classList.add("carousel-dots-active");
+// })
+// dots[2].addEventListener("click", function() {
+//     hideAllSlidesAndDots()
+//     slides[2].classList.add("carousel-item-visible");
+//     dots[2].classList.add("carousel-dots-active");
+// })
+// dots[3].addEventListener("click", function() {
+//     hideAllSlidesAndDots()
+//     slides[3].classList.add("carousel-item-visible");
+//     dots[3].classList.add("carousel-dots-active");
+// })
+// dots[4].addEventListener("click", function() {
+//     hideAllSlidesAndDots()
+//     slides[4].classList.add("carousel-item-visible");
+//     dots[4].classList.add("carousel-dots-active");
+// })
+// dots[5].addEventListener("click", function() {
+//     hideAllSlidesAndDots()
+//     slides[5].classList.add("carousel-item-visible");
+//     dots[5].classList.add("carousel-dots-active");
+// })
+// dots[6].addEventListener("click", function() {
+//     hideAllSlidesAndDots()
+//     slides[6].classList.add("carousel-item-visible");
+//     dots[6].classList.add("carousel-dots-active");
+// })
 
 let slidePosition = 0
 let totalSlides = slides.length
-
-dots[0].addEventListener("click", function() {
-    hideAllSlidesAndDots()
-    slides[0].classList.add("carousel-item-visible");
-    dots[0].classList.add("carousel-dots-active");
-})
-dots[1].addEventListener("click", function() {
-    hideAllSlidesAndDots()
-    slides[1].classList.add("carousel-item-visible");
-    dots[1].classList.add("carousel-dots-active");
-})
-dots[2].addEventListener("click", function() {
-    hideAllSlidesAndDots()
-    slides[2].classList.add("carousel-item-visible");
-    dots[2].classList.add("carousel-dots-active");
-})
-dots[3].addEventListener("click", function() {
-    hideAllSlidesAndDots()
-    slides[3].classList.add("carousel-item-visible");
-    dots[3].classList.add("carousel-dots-active");
-})
-dots[4].addEventListener("click", function() {
-    hideAllSlidesAndDots()
-    slides[4].classList.add("carousel-item-visible");
-    dots[4].classList.add("carousel-dots-active");
-})
-dots[5].addEventListener("click", function() {
-    hideAllSlidesAndDots()
-    slides[5].classList.add("carousel-item-visible");
-    dots[5].classList.add("carousel-dots-active");
-})
-dots[6].addEventListener("click", function() {
-    hideAllSlidesAndDots()
-    slides[6].classList.add("carousel-item-visible");
-    dots[6].classList.add("carousel-dots-active");
-})
-
 
 btnNext.addEventListener("click", nextSlide)
 btnPrev.addEventListener("click", prevSlide)
